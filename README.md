@@ -1,73 +1,61 @@
-# Welcome to your Lovable project
+# CyberQuest Portal
 
-## Project info
+CyberQuest is an NSF-funded project at Fisk University focused on cybersecurity curriculum
+innovation, hands-on labs, and undergraduate research opportunities.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Current highlights
 
-## How can I edit this code?
+- Modern hero banner with custom background image and overlay
+- Updated site branding with custom logo + favicon
+- Consistent team profiles on the home page and full team page with slide-in details
+- React Router pages for About, Team, Outcomes, Milestones, News, Contact, and courses
 
-There are several ways of editing your application.
+## Key pages
 
-**Use Lovable**
+- Home: `src/pages/Index.tsx`
+- Team: `src/pages/Team.tsx`
+- Courses: `src/pages/IntroToCybersecurity.tsx`, `src/pages/Cryptography.tsx`
+- Outcomes: `src/pages/Outcomes.tsx`
+- Milestones: `src/pages/Milestones.tsx`
+- News: `src/pages/News.tsx`
+- Contact: `src/pages/Contact.tsx`
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Shared data and components
 
-Changes made via Lovable will be committed automatically to this repo.
+- Team data: `src/data/team.ts`
+- Team profile grid + slide panel: `src/components/TeamProfileGrid.tsx`
+- Header/Footer branding: `src/components/Header.tsx`, `src/components/Footer.tsx`
 
-**Use your preferred IDE**
+## Static assets
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Hero background: `public/hero-image.png`
+- Logo/Favicon: `public/logo.png`
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Getting started
 
-Follow these steps:
+Prerequisites: Node.js and npm.
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Scripts
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- `npm run dev` - start the local dev server
+- `npm run build` - production build
+- `npm run preview` - preview the production build
+- `npm run lint` - run ESLint
+- `npm run test` - run tests with Vitest
 
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
+## Tech stack
 
 - Vite
-- TypeScript
 - React
-- shadcn-ui
+- TypeScript
 - Tailwind CSS
+- shadcn/ui
 
-## How can I deploy this project?
+## Deployment
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Build with `npm run build` and deploy the output from `dist/` to your hosting provider.

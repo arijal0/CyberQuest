@@ -4,7 +4,7 @@ import { ArrowRight, BookOpen } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative overflow-hidden hero-pattern">
+    <section className="relative overflow-hidden hero-banner">
       {/* Grid overlay */}
       <div className="absolute inset-0 hero-grid" />
       

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Shield, Mail, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -19,7 +19,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-2 text-xl font-bold text-foreground">
-              <Shield className="h-6 w-6 text-accent" />
+              <img src="/logo.png" alt="CyberQuest logo" className="h-9 w-9 shrink-0" />
               <span>CyberQuest</span>
             </Link>
             <p className="mt-4 max-w-md text-muted-foreground">
