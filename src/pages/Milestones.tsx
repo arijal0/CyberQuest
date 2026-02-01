@@ -6,7 +6,7 @@ const Milestones = () => {
   return (
     <>
       <Helmet>
-        <title>Project Milestones | CyberQuest</title>
+        <title>CyberQuest</title>
         <meta
           name="description"
           content="Milestones and progress updates for the CyberQuest project."

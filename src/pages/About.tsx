@@ -6,7 +6,7 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>About CyberQuest | Fisk University</title>
+        <title>CyberQuest</title>
         <meta
           name="description"
           content="CyberQuest is an NSF-funded Targeted Infusion Project focused on curriculum innovation and experiential learning for cybersecurity workforce development."

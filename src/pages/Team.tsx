@@ -8,7 +8,7 @@ const Team = () => {
   return (
     <>
       <Helmet>
-        <title>Research Team | CyberQuest</title>
+        <title>CyberQuest</title>
         <meta
           name="description"
           content="Meet the CyberQuest project leadership, faculty investigators, and student research assistants at Fisk University."

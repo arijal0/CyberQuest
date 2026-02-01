@@ -6,7 +6,7 @@ const News = () => {
   return (
     <>
       <Helmet>
-        <title>News | CyberQuest</title>
+        <title>CyberQuest</title>
         <meta name="description" content="CyberQuest news and updates." />
       </Helmet>
       <div className="flex min-h-screen flex-col">

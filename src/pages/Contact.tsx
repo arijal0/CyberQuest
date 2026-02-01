@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Contact | CyberQuest</title>
+        <title>CyberQuest</title>
         <meta
           name="description"
           content="Contact the CyberQuest project team at Fisk University."

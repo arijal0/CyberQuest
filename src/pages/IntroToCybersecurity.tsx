@@ -8,7 +8,7 @@ const IntroToCybersecurity = () => {
   return (
     <>
       <Helmet>
-        <title>Introduction to Cybersecurity | CyberQuest</title>
+        <title>CyberQuest</title>
         <meta
           name="description"
           content="Overview of the Introduction to Cybersecurity course developed through the CyberQuest project."

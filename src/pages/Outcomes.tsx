@@ -8,7 +8,7 @@ const Outcomes = () => {
   return (
     <>
       <Helmet>
-        <title>Project Outcomes | CyberQuest</title>
+        <title>CyberQuest</title>
         <meta
           name="description"
           content="Curriculum and educational outcomes from the CyberQuest project at Fisk University."

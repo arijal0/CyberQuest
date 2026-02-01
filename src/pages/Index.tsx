@@ -14,7 +14,7 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>CyberQuest | Cybersecurity Education at Fisk University</title>
+        <title>CyberQuest</title>
         <meta
           name="description"
           content="CyberQuest is an NSF-funded project building a cybersecurity concentration at Fisk University through new courses, hands-on labs, and undergraduate research opportunities."

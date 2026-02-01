@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
@@ -14,6 +14,13 @@ const navItems = [
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { pathname } = useLocation();
+
+  const handleHomeClick = () => {
+    if (pathname === "/") {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    }
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
@@ -22,7 +29,7 @@ const Header = () => {
           {/* Logo */}
           <Link 
             to="/"
-            reloadDocument
+            onClick={handleHomeClick}
             className="flex items-center gap-2 text-xl font-bold text-foreground transition-colors hover:text-accent"
           >
             <img src="/logo.png" alt="CyberQuest logo" className="h-10 w-10 shrink-0" />
@@ -32,7 +39,11 @@ const Header = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex md:items-center md:gap-1">
             {navItems.map((item) => (
-              <Link key={item.label} to={item.href} reloadDocument>
+              <Link
+                key={item.label}
+                to={item.href}
+                onClick={item.href === "/" ? handleHomeClick : undefined}
+              >
                 <Button variant="nav" size="sm">
                   {item.label}
                 </Button>
@@ -42,7 +53,7 @@ const Header = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:block">
-            <Link to="/contact" reloadDocument>
+            <Link to="/contact">
               <Button variant="navPrimary" size="sm">
                 Contact
               </Button>
@@ -73,15 +84,19 @@ const Header = () => {
                 <Link
                   key={item.label}
                   to={item.href}
-                  reloadDocument
                   className="block px-3 py-2 text-base font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => {
+                    if (item.href === "/") {
+                      handleHomeClick();
+                    }
+                    setMobileMenuOpen(false);
+                  }}
                 >
                   {item.label}
                 </Link>
               ))}
               <div className="px-3 pt-4">
-                <Link to="/contact" reloadDocument onClick={() => setMobileMenuOpen(false)}>
+                <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
                   <Button variant="navPrimary" className="w-full">
                     Contact
                   </Button>

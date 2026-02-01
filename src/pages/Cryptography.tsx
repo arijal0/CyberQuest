@@ -8,7 +8,7 @@ const Cryptography = () => {
   return (
     <>
       <Helmet>
-        <title>Cryptography | CyberQuest</title>
+        <title>CyberQuest</title>
         <meta
           name="description"
           content="Overview of the Cryptography course developed through the CyberQuest project."
