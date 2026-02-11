@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Check, Loader2, Circle, ArrowRight } from "lucide-react";
 
-const milestones = [
+type MilestoneStatus = "complete" | "progress" | "planned";
+
+const milestones: { status: MilestoneStatus; title: string; description: string }[] = [
   {
     status: "complete",
     title: "Launched New Courses",
@@ -20,7 +22,7 @@ const milestones = [
   },
 ];
 
-const getStatusIcon = (status: string) => {
+const getStatusIcon = (status: MilestoneStatus) => {
   switch (status) {
     case "complete":
       return (
@@ -30,7 +32,7 @@ const getStatusIcon = (status: string) => {
       );
     case "progress":
       return (
-        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-accent-foreground shadow-md animate-pulse">
+        <div className="flex h-8 w-8 animate-pulse items-center justify-center rounded-full bg-accent text-accent-foreground shadow-md">
           <Loader2 className="h-4 w-4" />
         </div>
       );
@@ -43,7 +45,7 @@ const getStatusIcon = (status: string) => {
   }
 };
 
-const getStatusLabel = (status: string) => {
+const getStatusLabel = (status: MilestoneStatus) => {
   switch (status) {
     case "complete":
       return <span className="text-xs font-medium text-accent">Completed</span>;
@@ -74,8 +76,8 @@ const MilestonesSection = () => {
 
             {/* Milestones */}
             <div className="space-y-8">
-              {milestones.map((milestone, index) => (
-                <div key={index} className="relative flex gap-6">
+              {milestones.map((milestone) => (
+                <div key={milestone.title} className="relative flex gap-6">
                   {/* Icon */}
                   <div className="relative z-10">{getStatusIcon(milestone.status)}</div>
 

@@ -1,15 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, MapPin } from "lucide-react";
-
-const navItems = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Team", href: "/team" },
-  { label: "Outcomes", href: "/outcomes" },
-  { label: "Milestones", href: "/milestones" },
-  { label: "News", href: "/news" },
-  { label: "Contact", href: "/contact" },
-];
+import { footerNavItems } from "@/data/navigation";
 
 const Footer = () => {
   return (
@@ -23,8 +14,8 @@ const Footer = () => {
               <span>CyberQuest</span>
             </Link>
             <p className="mt-4 max-w-md text-muted-foreground">
-              An NSF-funded Targeted Infusion Project building cybersecurity education 
-              at Fisk University through curriculum innovation and experiential learning.
+              An NSF-funded Targeted Infusion Project building cybersecurity education at Fisk
+              University through curriculum innovation and experiential learning.
             </p>
           </div>
 
@@ -32,7 +23,7 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-foreground">Navigation</h3>
             <ul className="mt-4 space-y-2">
-              {navItems.map((item) => (
+              {footerNavItems.map((item) => (
                 <li key={item.label}>
                   <Link
                     to={item.href}
@@ -52,8 +43,10 @@ const Footer = () => {
               <li className="flex items-start gap-3 text-muted-foreground">
                 <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
                 <span>
-                  CyberQuest Project Team<br />
-                  Department of Computer Science<br />
+                  CyberQuest Project Team
+                  <br />
+                  Department of Computer Science
+                  <br />
                   Fisk University
                 </span>
               </li>
@@ -73,11 +66,11 @@ const Footer = () => {
 
         {/* NSF Disclaimer */}
         <div className="mt-12 border-t border-border pt-8">
-          <p className="text-xs text-muted-foreground leading-relaxed">
-            <strong>NSF Disclaimer:</strong> This material is based upon work supported by the 
-            National Science Foundation. Any opinions, findings, and conclusions or recommendations 
-            expressed are those of the project team and do not necessarily reflect the views of 
-            the National Science Foundation.
+          <p className="text-xs leading-relaxed text-muted-foreground">
+            <strong>NSF Disclaimer:</strong> This material is based upon work supported by the
+            National Science Foundation. Any opinions, findings, and conclusions or recommendations
+            expressed are those of the project team and do not necessarily reflect the views of the
+            National Science Foundation.
           </p>
         </div>
 
@@ -86,9 +79,7 @@ const Footer = () => {
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} CyberQuest at Fisk University. All rights reserved.
           </p>
-          <p className="text-sm text-muted-foreground">
-            NSF-Funded Targeted Infusion Project
-          </p>
+          <p className="text-sm text-muted-foreground">NSF-Funded Targeted Infusion Project</p>
         </div>
       </div>
     </footer>

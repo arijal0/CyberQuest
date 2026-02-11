@@ -2,15 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-
-const navItems = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Team", href: "/team" },
-  { label: "Outcomes", href: "/outcomes" },
-  { label: "Milestones", href: "/milestones" },
-  { label: "News", href: "/news" },
-];
+import { navItems } from "@/data/navigation";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -27,7 +19,7 @@ const Header = () => {
       <nav className="w-full px-4" aria-label="Main navigation">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link 
+          <Link
             to="/"
             onClick={handleHomeClick}
             className="flex items-center gap-2 text-xl font-bold text-foreground transition-colors hover:text-accent"
@@ -68,11 +60,7 @@ const Header = () => {
             aria-expanded={mobileMenuOpen}
             aria-label="Toggle navigation menu"
           >
-            {mobileMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
+            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
 

@@ -11,6 +11,11 @@ export type FacultyMember = {
   courses: string[];
   highlights: string[];
   bio: string;
+  /** Optional contact / link fields — only rendered when provided */
+  portfolioUrl?: string;
+  email?: string;
+  linkedinUrl?: string;
+  githubUrl?: string;
 };
 
 export const facultyMembers: FacultyMember[] = [
@@ -30,8 +35,8 @@ export const facultyMembers: FacultyMember[] = [
       "Curriculum alignment across outcomes",
       "Research integration and assessment",
     ],
-    bio:
-      "Dr. Zhang oversees CyberQuest planning and execution, ensuring that research, teaching, and outreach are tightly aligned with project goals and student outcomes.",
+    bio: "Dr. Zhang oversees CyberQuest planning and execution, ensuring that research, teaching, and outreach are tightly aligned with project goals and student outcomes.",
+    email: "nzhang@fisk.edu",
   },
   {
     id: "hina-raja",
@@ -49,8 +54,7 @@ export const facultyMembers: FacultyMember[] = [
       "Ethical practice and governance",
       "Student engagement initiatives",
     ],
-    bio:
-      "Dr. Raja focuses on responsible cybersecurity practices and inclusive learning, connecting CyberQuest to local and regional community partners.",
+    bio: "Dr. Raja focuses on responsible cybersecurity practices and inclusive learning, connecting CyberQuest to local and regional community partners.",
   },
   {
     id: "qi-li",
@@ -68,8 +72,7 @@ export const facultyMembers: FacultyMember[] = [
       "Student research mentorship",
       "Technical review and quality assurance",
     ],
-    bio:
-      "Dr. Li ensures that CyberQuest students gain a deep, practical understanding of cryptography and secure software through applied labs and projects.",
+    bio: "Dr. Li ensures that CyberQuest students gain a deep, practical understanding of cryptography and secure software through applied labs and projects.",
   },
   {
     id: "yu-zhang",
@@ -87,7 +90,6 @@ export const facultyMembers: FacultyMember[] = [
       "Learning outcomes validation",
       "Continuous improvement strategy",
     ],
-    bio:
-      "Dr. Yu Zhang develops CyberQuest assessment plans that measure growth, mastery, and student impact over time.",
+    bio: "Dr. Yu Zhang develops CyberQuest assessment plans that measure growth, mastery, and student impact over time.",
   },
 ];

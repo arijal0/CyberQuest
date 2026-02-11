@@ -40,29 +40,28 @@ const OutcomesSection = () => {
         </div>
 
         <div className="mt-12 grid gap-8 md:grid-cols-3">
-          {outcomes.map((outcome, index) => (
+          {outcomes.map((outcome) => (
             <div
               key={outcome.title}
-              className="group relative overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all duration-300 hover:shadow-soft-lg card-hover"
+              className="card-hover group relative overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all duration-300 hover:shadow-soft-lg"
             >
               {/* Accent bar */}
               <div className="h-1 bg-gradient-to-r from-accent to-teal-light" />
-              
+
               <div className="p-8">
                 <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-accent-foreground">
                   <outcome.icon className="h-7 w-7" />
                 </div>
-                
-                <h3 className="mt-6 text-xl font-semibold text-foreground">
-                  {outcome.title}
-                </h3>
-                
-                <p className="mt-3 text-muted-foreground leading-relaxed">
-                  {outcome.description}
-                </p>
-                
+
+                <h3 className="mt-6 text-xl font-semibold text-foreground">{outcome.title}</h3>
+
+                <p className="mt-3 leading-relaxed text-muted-foreground">{outcome.description}</p>
+
                 <Link to={outcome.link} className="mt-6 inline-block">
-                  <Button variant="ghost" className="group/btn text-accent hover:text-accent hover:bg-accent/10 p-0">
+                  <Button
+                    variant="ghost"
+                    className="group/btn p-0 text-accent hover:bg-accent/10 hover:text-accent"
+                  >
                     Learn more
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                   </Button>

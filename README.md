@@ -47,6 +47,8 @@ npm run dev
 - `npm run preview` - preview the production build
 - `npm run lint` - run ESLint
 - `npm run test` - run tests with Vitest
+- `npm run format` - format code with Prettier
+- `npm run typecheck` - TypeScript type check
 
 ## Tech stack
 
@@ -55,6 +57,10 @@ npm run dev
 - TypeScript
 - Tailwind CSS
 - shadcn/ui
+
+## CI
+
+GitHub Actions runs on push/PR to `main`: lint, typecheck, test, and build.
 
 ## Deployment
 

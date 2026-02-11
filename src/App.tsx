@@ -1,22 +1,21 @@
+import { lazy, Suspense, useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
-import { useEffect } from "react";
-import Index from "./pages/Index";
-import About from "./pages/About";
-import Team from "./pages/Team";
-import Outcomes from "./pages/Outcomes";
-import IntroToCybersecurity from "./pages/IntroToCybersecurity";
-import Cryptography from "./pages/Cryptography";
-import Milestones from "./pages/Milestones";
-import News from "./pages/News";
-import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound";
+import ErrorBoundary from "@/components/ErrorBoundary";
 
-const queryClient = new QueryClient();
+const Index = lazy(() => import("./pages/Index"));
+const About = lazy(() => import("./pages/About"));
+const Team = lazy(() => import("./pages/Team"));
+const Outcomes = lazy(() => import("./pages/Outcomes"));
+const IntroToCybersecurity = lazy(() => import("./pages/IntroToCybersecurity"));
+const Cryptography = lazy(() => import("./pages/Cryptography"));
+const Milestones = lazy(() => import("./pages/Milestones"));
+const News = lazy(() => import("./pages/News"));
+const Contact = lazy(() => import("./pages/Contact"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -31,26 +30,30 @@ const ScrollToTop = () => {
 const App = () => (
   <BrowserRouter>
     <HelmetProvider>
-      <QueryClientProvider client={queryClient}>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <ErrorBoundary>
           <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/team" element={<Team />} />
-            <Route path="/outcomes" element={<Outcomes />} />
-            <Route path="/outcomes/intro-to-cybersecurity" element={<IntroToCybersecurity />} />
-            <Route path="/outcomes/cryptography" element={<Cryptography />} />
-            <Route path="/milestones" element={<Milestones />} />
-            <Route path="/news" element={<News />} />
-            <Route path="/contact" element={<Contact />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </TooltipProvider>
-      </QueryClientProvider>
+          <Suspense
+            fallback={<div className="flex min-h-screen items-center justify-center">Loading…</div>}
+          >
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/team" element={<Team />} />
+              <Route path="/outcomes" element={<Outcomes />} />
+              <Route path="/outcomes/intro-to-cybersecurity" element={<IntroToCybersecurity />} />
+              <Route path="/outcomes/cryptography" element={<Cryptography />} />
+              <Route path="/milestones" element={<Milestones />} />
+              <Route path="/news" element={<News />} />
+              <Route path="/contact" element={<Contact />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+        </ErrorBoundary>
+      </TooltipProvider>
     </HelmetProvider>
   </BrowserRouter>
 );
