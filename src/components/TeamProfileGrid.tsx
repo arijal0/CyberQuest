@@ -1,6 +1,6 @@
 import { useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
-import { ArrowRight, X, Mail, Globe, Linkedin, Github } from "lucide-react";
+import { ArrowRight, X, Mail, Globe, Linkedin, Github, GraduationCap } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import type { FacultyMember } from "@/data/team";
@@ -137,13 +137,9 @@ const TeamProfileGrid = ({ members }: TeamProfileGridProps) => {
                 </div>
                 <div className="rounded-2xl border border-border bg-card p-5">
                   <p className="text-xs font-semibold uppercase text-muted-foreground">
-                    Teaching Areas
+                    Courses Taught
                   </p>
-                  <ul className="mt-3 space-y-2 text-sm text-foreground">
-                    {activeMember?.courses.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
+                  <p className="mt-3 text-sm text-foreground">{activeMember?.coursesDescription}</p>
                 </div>
               </div>
 
@@ -161,7 +157,8 @@ const TeamProfileGrid = ({ members }: TeamProfileGridProps) => {
               {(activeMember?.email ||
                 activeMember?.portfolioUrl ||
                 activeMember?.linkedinUrl ||
-                activeMember?.githubUrl) && (
+                activeMember?.githubUrl ||
+                activeMember?.googleScholarUrl) && (
                 <div className="mt-6 rounded-2xl border border-border bg-card p-5">
                   <p className="text-xs font-semibold uppercase text-muted-foreground">Connect</p>
                   <div className="mt-3 flex flex-col gap-3">
@@ -173,6 +170,18 @@ const TeamProfileGrid = ({ members }: TeamProfileGridProps) => {
                       >
                         <Mail className="h-4 w-4 shrink-0 text-accent" />
                         {activeMember.email}
+                      </a>
+                    )}
+                    {activeMember.googleScholarUrl && (
+                      <a
+                        href={activeMember.googleScholarUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-sm text-foreground transition-colors hover:text-accent"
+                        title="Google Scholar"
+                      >
+                        <GraduationCap className="h-4 w-4 shrink-0 text-accent" />
+                        Google Scholar
                       </a>
                     )}
                     {activeMember.portfolioUrl && (
