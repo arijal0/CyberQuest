@@ -9,8 +9,7 @@ import Team from "@/pages/Team";
 import Outcomes from "@/pages/Outcomes";
 import IntroToCybersecurity from "@/pages/IntroToCybersecurity";
 import Cryptography from "@/pages/Cryptography";
-import Milestones from "@/pages/Milestones";
-import News from "@/pages/News";
+import Objectives from "@/pages/Objectives";
 import Contact from "@/pages/Contact";
 import NotFound from "@/pages/NotFound";
 
@@ -53,14 +52,12 @@ describe("Page smoke tests", () => {
     expect(screen.getByText("Cryptography")).toBeInTheDocument();
   });
 
-  it("renders the Milestones page", () => {
-    renderWithProviders(<Milestones />);
-    expect(screen.getByText("Project Milestones")).toBeInTheDocument();
-  });
-
-  it("renders the News page", () => {
-    renderWithProviders(<News />);
-    expect(screen.getByText("News and Updates")).toBeInTheDocument();
+  it("renders the Objectives page", () => {
+    renderWithProviders(<Objectives />);
+    expect(screen.getByText("Project Objectives")).toBeInTheDocument();
+    expect(screen.getAllByText("Curriculum Development").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Experiential Learning").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Research Buddy System").length).toBeGreaterThan(0);
   });
 
   it("renders the Contact page", () => {

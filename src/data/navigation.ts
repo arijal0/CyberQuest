@@ -5,11 +5,10 @@ export type NavItem = {
 
 export const navItems: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
   { label: "Team", href: "/team" },
   { label: "Outcomes", href: "/outcomes" },
-  { label: "Milestones", href: "/milestones" },
-  { label: "News", href: "/news" },
+  { label: "Objectives", href: "/objectives" },
+  { label: "About", href: "/about" },
 ];
 
 /** Footer includes the Contact link that the Header renders separately as a CTA button. */

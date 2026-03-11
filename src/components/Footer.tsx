@@ -7,13 +7,38 @@ const Footer = () => {
     <footer className="border-t border-border bg-muted/30">
       <div className="container-wide py-12 md:py-16">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {/* Brand */}
+          {/* Brand & Logos */}
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-2 text-xl font-bold text-foreground">
-              <img src="/logo.png" alt="CyberQuest logo" className="h-9 w-9 shrink-0" />
-              <span>CyberQuest</span>
-            </Link>
-            <p className="mt-4 max-w-md text-muted-foreground">
+            <div className="mb-4 flex items-center gap-2 md:gap-4">
+              <Link
+                to="/"
+                className="flex items-center gap-2 text-xl font-bold text-foreground transition-colors hover:text-accent"
+              >
+                <img
+                  src="/logo.png"
+                  alt="CyberQuest logo"
+                  className="h-9 w-9 shrink-0 object-contain"
+                />
+                <span>CyberQuest</span>
+              </Link>
+
+              <div className="h-6 w-px bg-border/60"></div>
+
+              <a
+                href="https://new.nsf.gov/"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="National Science Foundation"
+                className="flex items-center transition-opacity hover:opacity-80"
+              >
+                <img
+                  src="/NSF%20logo.png"
+                  alt="NSF logo"
+                  className="h-9 w-9 shrink-0 object-contain"
+                />
+              </a>
+            </div>
+            <p className="max-w-md text-muted-foreground">
               An NSF-funded Targeted Infusion Project building cybersecurity education at Fisk
               University through curriculum innovation and experiential learning.
             </p>

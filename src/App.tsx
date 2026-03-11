@@ -12,8 +12,7 @@ const Team = lazy(() => import("./pages/Team"));
 const Outcomes = lazy(() => import("./pages/Outcomes"));
 const IntroToCybersecurity = lazy(() => import("./pages/IntroToCybersecurity"));
 const Cryptography = lazy(() => import("./pages/Cryptography"));
-const Milestones = lazy(() => import("./pages/Milestones"));
-const News = lazy(() => import("./pages/News"));
+const Objectives = lazy(() => import("./pages/Objectives"));
 const Contact = lazy(() => import("./pages/Contact"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -45,8 +44,7 @@ const App = () => (
               <Route path="/outcomes" element={<Outcomes />} />
               <Route path="/outcomes/intro-to-cybersecurity" element={<IntroToCybersecurity />} />
               <Route path="/outcomes/cryptography" element={<Cryptography />} />
-              <Route path="/milestones" element={<Milestones />} />
-              <Route path="/news" element={<News />} />
+              <Route path="/objectives" element={<Objectives />} />
               <Route path="/contact" element={<Contact />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />

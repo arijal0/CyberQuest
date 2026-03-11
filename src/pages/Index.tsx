@@ -1,13 +1,15 @@
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import HeroSection from "@/components/HeroSection";
 import CredibilityStrip from "@/components/CredibilityStrip";
 import AboutSection from "@/components/AboutSection";
 import WhySection from "@/components/WhySection";
 import OutcomesSection from "@/components/OutcomesSection";
-import MilestonesSection from "@/components/MilestonesSection";
 import TeamSection from "@/components/TeamSection";
 import CTASection from "@/components/CTASection";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, BookOpen, Lightbulb, Loader2, Users, Circle } from "lucide-react";
 
 const Index = () => {
   return (
@@ -51,30 +53,123 @@ const Index = () => {
         <WhySection />
         <section className="section-padding bg-background">
           <div className="container-wide">
-            <div className="mx-auto max-w-3xl space-y-4">
-              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                Project Objectives
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Detailed objectives will be provided later. We will add the four objectives once
-                they are finalized.
-              </p>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {["Objective 1", "Objective 2", "Objective 3", "Objective 4"].map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-xl border border-border bg-card p-5 text-sm text-muted-foreground"
-                  >
-                    <span className="font-semibold text-foreground">{item}</span>
-                    <p className="mt-2">Details coming soon.</p>
+            <div className="mx-auto max-w-5xl">
+              <div className="mx-auto max-w-3xl text-center">
+                <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                  Project Objectives
+                </h2>
+                <p className="mt-4 text-lg text-muted-foreground">
+                  Three core pillars guide CyberQuest: a new curriculum, immersive experiential
+                  learning, and a cross-institution research buddy system.
+                </p>
+                <div className="mt-6">
+                  <Link to="/objectives" className="inline-flex">
+                    <Button variant="outline" size="lg">
+                      View full roadmap
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+
+              <div className="mt-10 grid gap-6 md:grid-cols-3">
+                <div className="card-hover group relative overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all duration-300 hover:shadow-soft-lg">
+                  <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-amber-500/80 to-amber-500/20" />
+                  <div className="p-8">
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-amber-500/10 text-amber-600 ring-1 ring-amber-500/20 transition-colors group-hover:bg-amber-500/20">
+                        <BookOpen className="h-7 w-7" />
+                      </div>
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-amber-600 ring-1 ring-amber-500/20">
+                        <Loader2 className="h-3 w-3 animate-spin" />
+                        In Progress
+                      </span>
+                    </div>
+                    <h3 className="mt-6 text-xl font-semibold text-foreground">
+                      Curriculum Development
+                    </h3>
+                    <p className="mt-3 leading-relaxed text-muted-foreground">
+                      An 18-credit cybersecurity concentration with required and elective
+                      coursework.
+                    </p>
+                    <Link to="/objectives#curriculum" className="mt-6 inline-block">
+                      <Button
+                        variant="ghost"
+                        className="group/btn p-0 text-accent hover:bg-accent/10 hover:text-accent"
+                      >
+                        Learn more
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+                      </Button>
+                    </Link>
                   </div>
-                ))}
+                </div>
+
+                <div className="card-hover group relative overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all duration-300 hover:shadow-soft-lg">
+                  <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-accent to-accent/30" />
+                  <div className="p-8">
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-accent/10 text-accent ring-1 ring-accent/20 transition-colors group-hover:bg-accent group-hover:text-accent-foreground">
+                        <Lightbulb className="h-7 w-7" />
+                      </div>
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-muted px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground ring-1 ring-border">
+                        <Circle className="h-3 w-3" />
+                        Planned
+                      </span>
+                    </div>
+                    <h3 className="mt-6 text-xl font-semibold text-foreground">
+                      Experiential Learning
+                    </h3>
+                    <p className="mt-3 leading-relaxed text-muted-foreground">
+                      XR simulations, virtual labs, and collaborative learning to build real-world
+                      skills.
+                    </p>
+                    <Link to="/objectives#experiential" className="mt-6 inline-block">
+                      <Button
+                        variant="ghost"
+                        className="group/btn p-0 text-accent hover:bg-accent/10 hover:text-accent"
+                      >
+                        Learn more
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+
+                <div className="card-hover group relative overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all duration-300 hover:shadow-soft-lg">
+                  <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-accent/70 to-accent/20" />
+                  <div className="p-8">
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-accent/10 text-accent ring-1 ring-accent/20 transition-colors group-hover:bg-accent group-hover:text-accent-foreground">
+                        <Users className="h-7 w-7" />
+                      </div>
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-muted px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground ring-1 ring-border">
+                        <Circle className="h-3 w-3" />
+                        Planned
+                      </span>
+                    </div>
+                    <h3 className="mt-6 text-xl font-semibold text-foreground">
+                      Research Buddy System
+                    </h3>
+                    <p className="mt-3 leading-relaxed text-muted-foreground">
+                      Fisk–Meharry collaboration enabling interdisciplinary capstone research and
+                      mentorship.
+                    </p>
+                    <Link to="/objectives#buddy" className="mt-6 inline-block">
+                      <Button
+                        variant="ghost"
+                        className="group/btn p-0 text-accent hover:bg-accent/10 hover:text-accent"
+                      >
+                        Learn more
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
         <OutcomesSection />
-        <MilestonesSection />
         <TeamSection />
         <section className="section-padding bg-muted/30">
           <div className="container-wide">

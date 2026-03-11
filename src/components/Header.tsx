@@ -18,15 +18,37 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <nav className="w-full px-4" aria-label="Main navigation">
         <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <Link
-            to="/"
-            onClick={handleHomeClick}
-            className="flex items-center gap-2 text-xl font-bold text-foreground transition-colors hover:text-accent"
-          >
-            <img src="/logo.png" alt="CyberQuest logo" className="h-10 w-10 shrink-0" />
-            <span>CyberQuest</span>
-          </Link>
+          {/* Logos */}
+          <div className="flex items-center gap-2 md:gap-4">
+            <Link
+              to="/"
+              onClick={handleHomeClick}
+              className="flex items-center gap-2 text-xl font-bold text-foreground transition-colors hover:text-accent"
+            >
+              <img
+                src="/logo.png"
+                alt="CyberQuest logo"
+                className="h-10 w-10 shrink-0 object-contain"
+              />
+              <span className="hidden sm:inline-block">CyberQuest</span>
+            </Link>
+
+            <div className="hidden h-6 w-px bg-border/60 sm:block"></div>
+
+            <a
+              href="https://new.nsf.gov/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="National Science Foundation"
+              className="flex items-center transition-opacity hover:opacity-80"
+            >
+              <img
+                src="/NSF%20logo.png"
+                alt="NSF logo"
+                className="h-10 w-10 shrink-0 object-contain"
+              />
+            </a>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex md:items-center md:gap-1">
