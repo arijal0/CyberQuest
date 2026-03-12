@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import Layout from "@/components/Layout";
 import TeamProfileGrid from "@/components/TeamProfileGrid";
-import { facultyMembers } from "@/data/team";
+import { facultyMembers, studentResearchAssistants } from "@/data/team";
 
 const Team = () => {
   return (
@@ -41,23 +41,20 @@ const Team = () => {
               <TeamProfileGrid members={facultyMembers} />
             </div>
 
-            <div className="mx-auto mt-12 max-w-4xl rounded-2xl border border-border bg-muted/40 p-8">
-              <h2 className="text-2xl font-semibold text-foreground">
-                Student Research Assistants (RAs)
-              </h2>
-              <p className="mt-2 text-muted-foreground">
-                Student involvement is a core part of CyberQuest. Six undergraduate Research
-                Assistants supported the project during the previous semester, and one undergraduate
-                Research Assistant is currently contributing this semester.
-              </p>
-              <ul className="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
-                <li>Course and curriculum development</li>
-                <li>Learning materials and lab activities</li>
-                <li>Research and project-related tasks</li>
-              </ul>
-              <p className="mt-4 text-muted-foreground">
-                We will add names, headshots, and profile links as new students join the team.
-              </p>
+            <div className="mx-auto mt-16 max-w-6xl" id="student-research-assistants">
+              <div className="flex flex-col items-center justify-between gap-3 sm:flex-row">
+                <div>
+                  <h2 className="text-2xl font-semibold text-foreground">
+                    Student Research Assistants (RAs)
+                  </h2>
+                  <p className="mt-2 text-muted-foreground">
+                    CyberQuest student researchers contribute to course development, lab setup, and
+                    testing to ensure a high-quality learning experience.
+                  </p>
+                </div>
+              </div>
+
+              <TeamProfileGrid members={studentResearchAssistants} />
             </div>
           </div>
         </section>

@@ -28,21 +28,27 @@ const TeamSection = () => {
               <span className="font-medium">Student Research Assistants</span>
             </div>
             <p className="mt-2 text-muted-foreground">
-              Supported 6 students last semester, 1 currently, with additional roles opening soon.
+              Student RAs support course development, labs, and infrastructure that power
+              CyberQuest.
             </p>
             <p className="mt-4 text-sm text-muted-foreground">
-              Research assistants contribute to lab development, outreach events, and the creation
-              of hands-on learning materials.
+              They help design learning materials, prepare lab environments, and test experiences
+              before they reach the classroom.
             </p>
-          </div>
-
-          <div className="text-center">
-            <Link to="/team">
-              <Button variant="outline" size="lg">
-                Meet the Team
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <Link to="/team">
+                <Button variant="outline" size="sm">
+                  Meet the full team
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+              <Link to="/team#student-research-assistants">
+                <Button size="sm">
+                  View student research assistants
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
