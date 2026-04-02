@@ -30,7 +30,7 @@ const Index = () => {
         />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="CyberQuest" />
-        <link rel="canonical" href="https://cyberquest.fisk.edu" />
+        <link rel="canonical" href="https://cyberquestfisk.vercel.app/" />
       </Helmet>
 
       <Layout>
