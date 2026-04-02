@@ -5,6 +5,7 @@ export type FacultyMember = {
   title: string;
   department: string;
   photo: string;
+  imagePosition?: string;
   shortBio: string;
   focus: string[];
   education: string[];
@@ -103,20 +104,23 @@ export const facultyMembers: FacultyMember[] = [
 
 export const studentResearchAssistants: FacultyMember[] = [
   {
-    id: "fatimah-badmos",
-    name: "Fatimah Badmos",
+    id: "ramika-pandey",
+    name: "Ramika Pandey",
     role: "Student Research Assistant",
     title: "Undergraduate, Computer Science",
     department: "Computer Science Department",
-    photo: "/placeholder.svg",
-    shortBio: "Supports course development for the Digital Forensics curriculum.",
-    focus: ["Course development", "Digital forensics", "Learning materials"],
+    photo: "/Ramika.jpeg",
+    shortBio: "Supports Digital Forensics course development and learning materials.",
+    focus: ["Course development", "Digital forensics", "Student support"],
     education: ["Undergraduate student, Computer Science"],
     coursesDescription:
-      "Contributes to the design and refinement of Digital Forensics course content and supporting materials.",
-    highlights: ["Co-developing Digital Forensics modules", "Supporting lab and assignment design"],
-    bio: "Fatimah Badmos serves as a CyberQuest Student Research Assistant focused on Digital Forensics course development, helping shape hands-on content and examples for undergraduate learners.",
-    linkedinUrl: "https://www.linkedin.com/in/fatimah-badmos/",
+      "Collaborates on Digital Forensics course materials and examples that connect theory to practice.",
+    highlights: [
+      "Co-developing Digital Forensics examples and case studies",
+      "Supporting refinement of course learning resources",
+    ],
+    bio: "Ramika Pandey is a Student Research Assistant contributing to Digital Forensics course development, helping craft example-driven content that strengthens student understanding.",
+    linkedinUrl: "https://www.linkedin.com/in/ramika-p-8879b4263/",
   },
   {
     id: "diwash-patel",
@@ -124,7 +128,7 @@ export const studentResearchAssistants: FacultyMember[] = [
     role: "Student Research Assistant",
     title: "Undergraduate, Computer Science",
     department: "Computer Science Department",
-    photo: "/placeholder.svg",
+    photo: "/Diwash.png",
     shortBio: "Works on course development for Intro to Cryptography.",
     focus: ["Course development", "Intro to Cryptography", "Problem sets"],
     education: ["Undergraduate student, Computer Science"],
@@ -143,7 +147,7 @@ export const studentResearchAssistants: FacultyMember[] = [
     role: "Student Research Assistant",
     title: "Undergraduate, Computer Science",
     department: "Computer Science Department",
-    photo: "/placeholder.svg",
+    photo: "/Ikechukwu.png",
     shortBio: "Helps design course and lab materials for Intro to Cybersecurity.",
     focus: ["Intro to Cybersecurity", "Course and lab development", "Hands-on learning"],
     education: ["Undergraduate student, Computer Science"],
@@ -163,7 +167,7 @@ export const studentResearchAssistants: FacultyMember[] = [
     role: "Student Research Assistant",
     title: "Undergraduate, Computer Science",
     department: "Computer Science Department",
-    photo: "/placeholder.svg",
+    photo: "/Onyekachi.png",
     shortBio: "Supports lab setup and environment configuration for CyberQuest courses.",
     focus: ["Lab setup", "Environment configuration", "Tooling support"],
     education: ["Undergraduate student, Computer Science"],
@@ -182,7 +186,7 @@ export const studentResearchAssistants: FacultyMember[] = [
     role: "Student Research Assistant",
     title: "Undergraduate, Computer Science",
     department: "Computer Science Department",
-    photo: "/placeholder.svg",
+    photo: "/Abishek.png",
     shortBio:
       "Contributes to hardware setup, software installation, and testing for CyberQuest labs.",
     focus: ["Hardware setup", "Software installation", "Testing"],
@@ -197,22 +201,20 @@ export const studentResearchAssistants: FacultyMember[] = [
     linkedinUrl: "https://www.linkedin.com/in/abishek-bhatta",
   },
   {
-    id: "ramika-pandey",
-    name: "Ramika Pandey",
+    id: "fatimah-badmos",
+    name: "Fatimah Badmos",
     role: "Student Research Assistant",
     title: "Undergraduate, Computer Science",
     department: "Computer Science Department",
-    photo: "/placeholder.svg",
-    shortBio: "Supports Digital Forensics course development and learning materials.",
-    focus: ["Course development", "Digital forensics", "Student support"],
+    photo: "/Fatimah.png",
+    imagePosition: "center",
+    shortBio: "Supports course development for the Digital Forensics curriculum.",
+    focus: ["Course development", "Digital forensics", "Learning materials"],
     education: ["Undergraduate student, Computer Science"],
     coursesDescription:
-      "Collaborates on Digital Forensics course materials and examples that connect theory to practice.",
-    highlights: [
-      "Co-developing Digital Forensics examples and case studies",
-      "Supporting refinement of course learning resources",
-    ],
-    bio: "Ramika Pandey is a Student Research Assistant contributing to Digital Forensics course development, helping craft example-driven content that strengthens student understanding.",
-    linkedinUrl: "https://www.linkedin.com/in/ramika-p-8879b4263/",
+      "Contributes to the design and refinement of Digital Forensics course content and supporting materials.",
+    highlights: ["Co-developing Digital Forensics modules", "Supporting lab and assignment design"],
+    bio: "Fatimah Badmos serves as a CyberQuest Student Research Assistant focused on Digital Forensics course development, helping shape hands-on content and examples for undergraduate learners.",
+    linkedinUrl: "https://www.linkedin.com/in/fatimah-badmos/",
   },
 ];

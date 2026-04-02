@@ -27,7 +27,8 @@ const TeamProfileGrid = ({ members }: TeamProfileGridProps) => {
                 <img
                   src={member.photo}
                   alt={`${member.name} headshot`}
-                  className="h-full w-full object-cover object-top"
+                  className="h-full w-full object-cover"
+                  style={{ objectPosition: member.imagePosition || "top" }}
                 />
               </div>
               <div className="flex-1">
@@ -110,7 +111,8 @@ const TeamProfileGrid = ({ members }: TeamProfileGridProps) => {
                     <img
                       src={activeMember.photo}
                       alt={`${activeMember.name} portrait`}
-                      className="h-full w-full object-cover object-top"
+                      className="h-full w-full object-cover"
+                      style={{ objectPosition: activeMember.imagePosition || "top" }}
                     />
                   )}
                 </div>
